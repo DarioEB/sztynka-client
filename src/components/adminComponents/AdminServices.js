@@ -17,6 +17,7 @@ const AdminServices = () => {
             getCategories();
         }
         downloadServices();
+        // eslint-disable-next-line
     }, []);
 
     const [action, setAction] = useState('');
