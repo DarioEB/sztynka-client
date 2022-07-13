@@ -9,9 +9,11 @@ const Resume = ({ state }) => {
     const [text, setText] = useState('');
 
     useEffect(() => {
-        setText(getTextResume());
+        if(!creating) { 
+            setText(getTextResume());
+        }
         // eslint-disable-next-line
-    }, [])
+    }, [creating])
     
 
     const handleShift = () => {

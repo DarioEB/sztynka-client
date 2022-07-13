@@ -58,8 +58,7 @@ const DateState = ({children}) => {
                     confirmButton: 's-btn'
                 }
             });
-        } catch (error) {
-            console.log(error);
+        } catch (error) { 
             dispatch({
                 type: DATE_DISABLE_FAILED
             });

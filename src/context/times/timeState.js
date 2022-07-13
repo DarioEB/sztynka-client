@@ -28,8 +28,7 @@ const TimeState = ({children}) => {
                 type: GET_TIMES_SUCCESS,
                 payload: response.data.times
             });
-        } catch(error) {
-            console.log(error);
+        } catch(error) { 
             dispatch({
                 type: GET_TIMES_FAILED
             });

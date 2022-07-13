@@ -7,8 +7,7 @@ import Shifts from './homeComponents/Shifts';
 const Home = () => {
 
     const [section, setSection] = useState('services');
-    const [paginator, setPaginator] = useState(1);
-
+    const [paginator, setPaginator] = useState(1); 
 
     // Disabled date
     const dateNow = new Date();

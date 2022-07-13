@@ -61,8 +61,8 @@ const ShiftState = ({children}) => {
 
             Swal.fire({
                 title: 'Turno reservado',
-                text: `Tu turno se reservoó correctamente. Gracias por elegir Sztynka Barbero`,
-                type: 'success',
+                text: `Tu turno se reservó correctamente. Gracias por elegir Sztynka Barbero`,
+                icon: 'success',
                 background: '#000',
                 allowOutsideClick: false,
                 confirmButtonText: 'OK',
@@ -78,12 +78,27 @@ const ShiftState = ({children}) => {
                 }
             });
 
-        } catch(error) {
-            console.log(error);
+        } catch(error) { 
             dispatch({
                 type: CREATE_SHIFT_FAILED,
                 payload: error.response.msg
             })
+
+            Swal.fire({
+                title: 'No fue posible reservar el turno',
+                text: error.response.data.msg,
+                icon: 'error',
+                background: '#000',
+                allowOutsideClick: false,
+                confirmButtonText: 'Volver',
+                customClass: {
+                    popup: 's-container-error',
+                    title: 's-title',
+                    htmlContainer: 's-text',
+                    confirmButton: 's-btn-error'
+                }
+            })
+            
         }
     }
 
@@ -155,8 +170,7 @@ const ShiftState = ({children}) => {
                 type: GET_SHIFTS_DATE_SUCCESS,
                 payload: response.data
             });
-        } catch (error) {
-            console.log(error);
+        } catch (error) { 
             dispatch({
                 type: GET_SHIFTS_DATE_FAILED
             })

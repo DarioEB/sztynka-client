@@ -75,7 +75,12 @@ const shiftReducer = (state, action) => {
                 ...state,
                 msg: action.payload,
                 error: true,
-                creating: false
+                creating: false, 
+                date: '',
+                time: null,
+                timename: null,
+                shift: { ...state.shift, date: '', time: null, timename: null },
+                times: [],
             }
         case GET_SHIFTS_DATE:
             return {

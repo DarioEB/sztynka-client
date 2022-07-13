@@ -7,11 +7,12 @@ import dateContext from '../../context/dates/dateContext';
 import BtnTime from './BtnTime';
 import Spin from '../Spin';
 import Alert from '../Alert';
+
 const Shifts = ({state, disabled}) => {
     
     // Context ShiftContext
     const ShiftContext = useContext(shiftContext);
-    const {name, setNameShift, date, setDateShift, getShiftsDate, times, loadTimes} = ShiftContext;
+    const { name, setNameShift, date, setDateShift, getShiftsDate, times, loadTimes } = ShiftContext;
     
     // Context alertas
     const AlertContext = useContext(alertContext);
@@ -58,7 +59,7 @@ const Shifts = ({state, disabled}) => {
             setDateShift(e.target.value);
             getShiftsDate(e.target.value);
         }
-    }
+    } 
 
     return(
         <div className={`content-section ${state === 'shifts' ? 'show' : 'hidden'}`}>

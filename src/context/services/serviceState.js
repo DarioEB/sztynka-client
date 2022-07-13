@@ -82,8 +82,7 @@ const ServiceState = ({children}) => {
                     confirmButton: 's-btn'
                 }
             });
-        } catch (error) {
-            console.log(error);
+        } catch (error) { 
             dispatch({
                 type: CREATE_SERVICE_FAILED
             });
@@ -128,8 +127,8 @@ const ServiceState = ({children}) => {
                     confirmButton: 's-btn'
                 }
             });
-        } catch (error) {
-            console.log(error);
+        } catch (error) { 
+
             dispatch({
                 type: UPDATE_SERVICE_FAILED
             });
@@ -155,8 +154,7 @@ const ServiceState = ({children}) => {
             type: CREATE_CATEGORY
         })
         try {
-            const response = await axiosClient.post('/api/categories', category);
-            console.log(response);
+            const response = await axiosClient.post('/api/categories', category); 
             dispatch({
                 type: CREATE_CATEGORY_SUCCESS,
                 payload: response.data.category
@@ -175,8 +173,7 @@ const ServiceState = ({children}) => {
                     confirmButton: 's-btn'
                 }
             });
-        } catch (error) {
-            console.log(error);
+        } catch (error) { 
             dispatch({
                 type: CREATE_CATEGORY_FAILED
             });
@@ -221,8 +218,7 @@ const ServiceState = ({children}) => {
                     confirmButton: 's-btn'
                 }
             });
-        } catch (error) {
-            console.log(error);
+        } catch (error) { 
             dispatch({
                 type: UPDATE_CATEGORY_FAILED
             });
@@ -249,14 +245,12 @@ const ServiceState = ({children}) => {
         });
 
         try {
-            const response = await axiosClient.get('/api/categories');
-            // console.log(response);
+            const response = await axiosClient.get('/api/categories'); 
             dispatch({
                 type: GET_CATEGORIES_SUCCESS,
                 payload: response.data.categories
             });
-        } catch (error) {
-            console.log(error);
+        } catch (error) { 
             dispatch({
                 type: GET_CATEGORIES_FAILED
             })
@@ -268,8 +262,7 @@ const ServiceState = ({children}) => {
             type: GET_SERVICES
         });
         try {
-            const response = await axiosClient.get('/api/services');
-            // console.log(response);
+            const response = await axiosClient.get('/api/services'); 
             dispatch({
                 type: GET_SERVICES_SUCCESS,
                 payload: response.data.services
